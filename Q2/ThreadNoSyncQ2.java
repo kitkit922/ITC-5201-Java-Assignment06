@@ -1,25 +1,26 @@
-package assessment.assignment06.Q2;
+package Q2;
 
-public class ThreadQ2 extends Thread {
-
+public class ThreadNoSyncQ2 extends Thread {
     static int sum = 0;
     static Integer obj = Integer.valueOf(sum);
 
     public static void main(String[] args) {
+        System.out.println("\n--------Demo of Q2 with Non-Sync--------\n");
+
+        System.out.println("Sum Initial Value:\t" + sum);
 
         for (int i = 0; i < 1000; i++) {
-            ThreadQ2 t = new ThreadQ2();
+            ThreadNoSyncQ2 t = new ThreadNoSyncQ2();
             t.start();
         }
 
         try {
-            Thread.sleep(5000);
+            Thread.sleep(3000);
         } catch (InterruptedException ex) {
             System.out.println(ex.getMessage());
         }
 
-        System.out.println("Sum:\t" + sum);
-
+        System.out.println("Sum Final Value:\t" + sum);
     }
 
     @Override
@@ -27,7 +28,7 @@ public class ThreadQ2 extends Thread {
         Add();
     }
 
-    public static synchronized void Add() {
+    public void Add() {
 
         sum = obj.intValue();
         obj = Integer.valueOf(++sum);
