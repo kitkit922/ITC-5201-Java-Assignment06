@@ -1,9 +1,15 @@
 package Q2;
 
+/**
+ * This is a class for question02 without Sync
+ * 
+ * @author Wenhao
+ * @id n01555914
+ */
 public class ThreadSyncQ2 extends Thread {
 
     static int sum = 0;
-    static Integer obj = Integer.valueOf(sum);
+    static Integer obj = Integer.valueOf(sum);// Define an Integer wrapper object to hold sum
 
     public static void main(String[] args) {
         System.out.println("\n--------Demo of Q2 with Sync--------\n");
@@ -29,10 +35,10 @@ public class ThreadSyncQ2 extends Thread {
         Add();
     }
 
-    public static synchronized void Add() {
+    public static synchronized void Add() {// lock Integer obj using synchronization block, preventing concurrence
 
         sum = obj.intValue();
-        obj = Integer.valueOf(++sum);
+        obj = Integer.valueOf(++sum);// adds 1 to a variable sum; increment first then use the value
         // System.out.println("Obj\t" + obj);
     }
 

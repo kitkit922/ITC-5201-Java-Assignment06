@@ -32,16 +32,16 @@ public class TaskThreadDemo extends JFrame {
     TaskThreadDemo demo = new TaskThreadDemo();
 
     // // Create tasks
-    Runnable printA = new PrintChar('a', 200, textArea);
-    Runnable printB = new PrintChar('b', 200, textArea);
-    Runnable print100 = new PrintNum(100, textArea);
+    Runnable printA = new PrintChar('a', 3000, textArea);
+    Runnable printB = new PrintChar('b', 3000, textArea);
+    Runnable print100 = new PrintNum(2000, textArea);
 
     // // Create threads
     Thread thread1 = new Thread(printA);
     Thread thread2 = new Thread(printB);
     Thread thread3 = new Thread(print100);
 
-    // thread1.setPriority(Thread.MAX_PRIORITY);
+    thread1.setPriority(Thread.MAX_PRIORITY);
 
     // // Start threads
     thread1.start();

@@ -4,6 +4,9 @@ import java.util.*;
 
 /**
  * This is a class to demostrate output.
+ * 
+ * @author Wenhao
+ * @id n01555914
  */
 public class Q3Demo {
 
